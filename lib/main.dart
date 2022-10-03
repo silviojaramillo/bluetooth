@@ -9,45 +9,78 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 43, 79, 194),
-          centerTitle: true,
-          title: const Text(
-            'Visualización de datos Arduino',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-            ),
-          ),
-        ),
+        backgroundColor: const Color.fromARGB(255, 223, 223, 223),
         body: Container(
-          margin: const EdgeInsets.all(10),
+          margin: const EdgeInsets.fromLTRB(15, 70, 15, 0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text('¡Te doy la bienvenida a ArduApp!'),
-              const Text(
-                  'Aquí se verán los datos que envíes desde Arduino a través de Bluetooth. Tenga en cuenta que aquí solo se visualiza un valor y su interpretación depende de la variable que usted quiera medir.'),
               Container(
-                color: Colors.blue,
-                child: Card(
-                  color: const Color.fromARGB(255, 212, 44, 44),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: const [
-                        Icon(
-                          Icons.calculate,
-                          size: 50,
-                        ),
-                        Text('Titulo'),
-                        Text('Occaecat eu culpa ipsum incididunt.')
-                      ],
-                    ),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                    color: Colors.teal, borderRadius: BorderRadius.circular(5)),
+                margin: const EdgeInsets.only(bottom: 50),
+                child: const Text(
+                  '¡ArduApp!',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              )
+              ),
+              const Text(
+                'Aquí se verán los datos que envíes desde Arduino a través de Bluetooth. Tenga en cuenta que aquí solo se visualiza un valor y su interpretación depende de la variable que usted quiera medir.',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                ),
+              ),
+              const SizedBox(height: 15),
+              Container(
+                padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 45, 86, 119),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(1),
+                      decoration: BoxDecoration(
+                          color: Colors.teal,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: const Icon(
+                        Icons.analytics,
+                        size: 70,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const Text(
+                      'Tu dato se ha procesado correctamente',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 20),
+                      width: 120,
+                      height: 70,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: const Text(
+                        '0',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),
