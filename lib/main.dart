@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               const Text(
-                'Aquí se verán los datos que envíes desde Arduino a través de Bluetooth. Tenga en cuenta que aquí solo se visualiza un valor y su interpretación depende de la variable que usted quiera medir.',
+                'Aquí se verán los datos que envíes desde Arduino a través de Bluetooth. Tenga en cuenta que aquí solo se visualiza un valor de algún tipo y su interpretación depende de la variable que usted quiera medir.',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -63,18 +63,31 @@ class MyApp extends StatelessWidget {
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 20),
-                      width: 120,
+                      width: 270,
                       height: 70,
                       decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: const Text(
-                        '0',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: const [
+                                Text(
+                                  '0',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     )
